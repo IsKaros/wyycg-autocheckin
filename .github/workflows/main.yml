@@ -16,6 +16,7 @@ on:
    
 jobs:
   build:
+    environment: mine
     runs-on: ubuntu-latest
     steps:
     - name: Checkout
@@ -32,4 +33,4 @@ jobs:
         echo ${{ secrets.cookie }}  ${{ secrets.COOKIE }}
     - name: Run script
       run: |
-        python3 main.py "${{ secrets.cookie }}" "${{ secrets.teleid }}" "${{ secrets.teletoken }}" "${{ secrets.SCKEY }}" "${{ secrets.QQKEY }}" "${{ secrets.PPKEY }}"
+        python3 main.py "${{ secrets.COOKIE }}" "${{ secrets.teleid }}" "${{ secrets.teletoken }}" "${{ secrets.SCKEY }}" "${{ secrets.QQKEY }}" "${{ secrets.PPKEY }}"
