@@ -27,6 +27,9 @@ jobs:
     - name: Install requirements #安装轮子
       run: |
         pip install -r requirements.txt
+    - name: Check cookie
+      run: |
+        echo ${{ secrets.cookie }}  ${{ secrets.COOKIE }}
     - name: Run script
       run: |
         python3 main.py "${{ secrets.cookie }}" "${{ secrets.teleid }}" "${{ secrets.teletoken }}" "${{ secrets.SCKEY }}" "${{ secrets.QQKEY }}" "${{ secrets.PPKEY }}"
